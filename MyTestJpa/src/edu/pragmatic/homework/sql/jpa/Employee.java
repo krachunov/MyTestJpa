@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @DiscriminatorValue("E")
-@Table(name = "employees2")
+@Table(name = "employees")
 public class Employee extends People {
 
 	@Column(name="hire_date")

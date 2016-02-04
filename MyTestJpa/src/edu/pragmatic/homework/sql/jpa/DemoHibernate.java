@@ -23,26 +23,26 @@ public class DemoHibernate {
 			EntityManager em = factory.createEntityManager();
 
 			// Begin a new local transaction so that we can persist a new entity
-			em.getTransaction().begin();
+//			em.getTransaction().begin();
 
 			// Create and persist a new Message entity
-			Employee emp = new Employee("1953-09-02", "ICO", "krachu", "m",
-					857454, "1986-06-26");
-			em.persist(emp);
+			// Employee emp = new Employee("1953-09-02", "ICO", "krachu", "m",
+			// 857454, "1986-06-26");
+			// em.persist(emp);
 
 			// Commit the transaction, which will cause the entity to
 			// be stored in the database
-			em.getTransaction().commit();
+			// em.getTransaction().commit();
 
 			// Perform a simple query for all the Message entities
-//			Query query = em.createQuery("select m from Message m");
-//
-//			// Go through each of the entities and print out each of their
-//			// messages, as well as the date on which it was created
-//			for (Employee m : (List<Employee>) query.getResultList()) {
-//				System.out.printf("%s (created on: %s)\n", m.getFirstName(),
-//						m.getLastLame());
-//			}
+			Query query = em.createQuery("select m from Employee m");
+
+			// // Go through each of the entities and print out each of their
+			// // messages, as well as the date on which it was created
+			for (Employee m : (List<Employee>) query.getResultList()) {
+				System.out
+						.printf("%s  %s\n", m.getFirstName(), m.getLastLame());
+			}
 
 			// It is always good practice to close the EntityManager so that
 			// resources are conserved.

@@ -10,9 +10,10 @@ import javax.persistence.Table;
 @Entity
 @Inheritance
 @DiscriminatorColumn(name = "PROJ_TYPE")
-@Table(name = "employees2")
+@Table(name = "employees")
 public abstract class People {
 
+	// TODO
 	@Id
 	private int empNo;
 
